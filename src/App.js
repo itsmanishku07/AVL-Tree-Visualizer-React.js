@@ -1,25 +1,24 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import Controls from './components/Controls';
+import TreeContainer from './components/TreeContainer';
+import AVLTree from './utils/AVLTree';
 import './App.css';
 
-function App() {
+const App = () => {
+  const [avlTree] = useState(new AVLTree());
+  const [output, setOutput] = useState('');
+  const [renderTrigger, setRenderTrigger] = useState(0);
+
+  const refreshTree = () => setRenderTrigger((prev) => prev + 1);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <h1 className='heading'>AVL Tree Visualizer</h1>
+      <Controls avlTree={avlTree} setOutput={setOutput} refreshTree={refreshTree} />
+      <TreeContainer avlTree={avlTree} key={renderTrigger} />
+      <div className="output">{output || 'Output Will Appear Here'}</div>
     </div>
   );
-}
+};
 
 export default App;
