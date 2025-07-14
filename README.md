@@ -22,19 +22,7 @@ An interactive and educational **AVL Tree Visualizer** that helps users understa
 ## 📸 Demo
 
 https://avltreevisualizer7.netlify.app/
----
 
-avl-tree-visualizer/
-├── public/
-├── src/
-│   ├── components/       # AVLNode, TreeRenderer, Controls, etc.
-│   ├── utils/            # AVL logic (rotations, insert, delete, traverse)
-│   ├── App.jsx           # Main visualizer UI
-│   ├── main.jsx
-│   └── index.css
-├── index.html
-├── tailwind.config.js
-└── vite.config.js
 
 
 
